@@ -32,4 +32,4 @@ perf_score = np.array([accuracy_score(Y_test, predictions), precision_score(Y_te
 print("the evaluated cross-validation scores is",cross_val)
 print ("the evalatue performance metrics result is",perf_score)
 
-print(("hi"))
+
