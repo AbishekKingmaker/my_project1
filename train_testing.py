@@ -13,7 +13,8 @@ lab_fin = np.load('lab_fin.npy',allow_pickle=True)
 ### Splitting train test percentage
 X_train, X_test, Y_train, Y_test = train_test_split(data_fin, lab_fin, test_size=0.3, random_state=42)
 
-mdl = LogisticRegression()
+## set hyper parameter
+mdl = LogisticRegression(solver='saga',penalty='none',max_iter=100) ## newton-cg,lbfgs,sag,saga
 mdl.fit(X_train,Y_train)
 joblib.dump(mdl, 'log_reg.pkl')
 predictions = mdl.predict(X_test)
